@@ -14,6 +14,7 @@
 		18D8767522E5AA3500028D7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D8767322E5AA3500028D7A /* LaunchScreen.storyboard */; };
 		18D8768422E5CACD00028D7A /* OnTheMapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8768322E5CACD00028D7A /* OnTheMapClient.swift */; };
 		18D8768622E5CCBD00028D7A /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8768522E5CCBD00028D7A /* ErrorResponse.swift */; };
+		18D8768822E5CD8C00028D7A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8768722E5CD8C00028D7A /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		18D8767622E5AA3500028D7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D8768322E5CACD00028D7A /* OnTheMapClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapClient.swift; sourceTree = "<group>"; };
 		18D8768522E5CCBD00028D7A /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		18D8768722E5CD8C00028D7A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				18D8766C22E5AA3100028D7A /* ViewController.swift */,
+				18D8768722E5CD8C00028D7A /* UIViewController+Extension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				18D8768422E5CACD00028D7A /* OnTheMapClient.swift in Sources */,
 				18D8766D22E5AA3100028D7A /* ViewController.swift in Sources */,
 				18D8766B22E5AA3100028D7A /* AppDelegate.swift in Sources */,
+				18D8768822E5CD8C00028D7A /* UIViewController+Extension.swift in Sources */,
 				18D8768622E5CCBD00028D7A /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
