@@ -17,5 +17,17 @@ class OnTheMapClient {
     
     enum Endpoints {
         static let baseUrl = "https://onthemap-api.udacity.com/v1"
+        
+        case login
+        
+        var stringValue: String {
+            switch self {
+            case .login: return Endpoints.baseUrl + "session"
+            }
+        }
+        
+        var url: URL {
+            return URL(string: stringValue)!
+        }
     }
 }
