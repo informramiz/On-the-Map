@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var loginActivityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,9 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginButtonTapped(_ sender: Any) {
+        loggingIn(true)
         OnTheMapClient.login(email: emailTextField.text!, password: passwordTextField.text!) { success, error in
+            self.loggingIn(false)
             if success {
                 self.showAlert(message: "Login successful")
             } else {
@@ -31,6 +34,20 @@ class LoginViewController: UIViewController {
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
         openUrl(url: OnTheMapClient.Endpoints.signUp.url)
+    }
+    
+    private func loggingIn(_ isLogginIn: Bool) {
+        if isLogginIn {
+            loginActivityIndicator.startAnimating()
+        } else {
+            loginActivityIndicator.stopAnimating()
+        }
+        
+        //disable interactable views when login in progress
+        emailTextField.isEnabled = !isLogginIn
+        passwordTextField.isEnabled = !isLogginIn
+        loginButton.isEnabled = !isLogginIn
+        signUpButton.isEnabled = !isLogginIn
     }
 }
 

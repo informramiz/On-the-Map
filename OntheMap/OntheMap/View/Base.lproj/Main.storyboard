@@ -72,18 +72,27 @@
                                     <constraint firstAttribute="width" constant="225" id="aVE-Ba-ydO"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="pCF-cH-z3c" userLabel="Login Activity Indicator">
+                                <rect key="frame" x="197" y="491" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="M9E-ph-Fmx"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="H7e-2r-Goa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Idz-cU-x9z"/>
+                            <constraint firstItem="pCF-cH-z3c" firstAttribute="top" secondItem="H7e-2r-Goa" secondAttribute="bottom" constant="8" id="L3f-q1-g67"/>
                             <constraint firstItem="3Fx-ts-E4d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1:1.2" id="L4V-gF-mwz"/>
                             <constraint firstItem="H7e-2r-Goa" firstAttribute="top" secondItem="3Fx-ts-E4d" secondAttribute="bottom" constant="21.5" id="QWv-sA-Smf"/>
                             <constraint firstItem="3Fx-ts-E4d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qui-jr-JcT"/>
+                            <constraint firstItem="pCF-cH-z3c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vbh-IK-6kT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="TsT-bI-kPB" id="bF2-fg-4Gv"/>
+                        <outlet property="loginActivityIndicator" destination="pCF-cH-z3c" id="W2e-Px-vwS"/>
                         <outlet property="loginButton" destination="Ks1-4J-aCk" id="hgW-tX-BPa"/>
                         <outlet property="passwordTextField" destination="pGv-5e-zDq" id="WHU-TO-E5e"/>
                         <outlet property="signUpButton" destination="IG3-Vh-xIx" id="EBm-tn-Ehn"/>
