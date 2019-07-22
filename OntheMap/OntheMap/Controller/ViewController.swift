@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        
+        openUrl(url: OnTheMapClient.Endpoints.signUp.url)
     }
 }
 
