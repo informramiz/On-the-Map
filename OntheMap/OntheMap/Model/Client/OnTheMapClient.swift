@@ -10,13 +10,13 @@ import Foundation
 
 class OnTheMapClient {
     //as this app does not support persistence so below struct will be used
-    struct Auth {
+    private struct Auth {
         static var sessionId = ""
         static var userId = ""
     }
     
-    enum Endpoints {
-        static let baseUrl = "https://onthemap-api.udacity.com/v1"
+    private enum Endpoints {
+        static let baseUrl = "https://onthemap-api.udacity.com/v1/"
         
         case login
         
@@ -31,6 +31,21 @@ class OnTheMapClient {
         }
     }
     
+    class func login(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
+        let request = LoginRequest(username: email, password: password)
+        taskForPostRequest(url: Endpoints.login.url, request: request, responseType: LoginResponse.self, skipFirstFiveCharacters: true) { (response, error) in
+            if let response = response {
+                Auth.sessionId = response.session.id
+                Auth.userId = response.account.key
+                completion(true, nil)
+            } else {
+                completion(false, error)
+            }
+        }
+    }
+    
+    /*-----------------------------------Helper Functions below-------------------------------------*/
+    
     /*
      We need parameter `response: ResponseType.Type` so that we can receive type information from the call regarding the
      generic type `ResponseType`. We need this because in Swift we can't specialize functions by writing them like `taskForGetRequest<MyType>(...)`
@@ -38,9 +53,11 @@ class OnTheMapClient {
      */
     @discardableResult private class func taskForGetRequest<ResponseType: Decodable>(url: URL,
                                                                              responseType: ResponseType.Type,
+                                                                             skipFirstFiveCharacters: Bool,
                                                                              completionHandler: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            handleResponse(data: data, error: error, responseType: responseType, completionHandler: completionHandler)
+            handleResponse(data: data, error: error, responseType: responseType,
+                           skipFirstFiveCharacters: skipFirstFiveCharacters, completionHandler: completionHandler)
         }
         task.resume()
         return task
@@ -54,6 +71,7 @@ class OnTheMapClient {
     private class func taskForPostRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL,
                                                                                    request: RequestType,
                                                                                    responseType: ResponseType.Type,
+                                                                                   skipFirstFiveCharacters: Bool,
                                                                                    completionHandler: @escaping (ResponseType?, Error?) -> Void) {
         //build http body
         var urlRequest = URLRequest(url: url)
@@ -63,7 +81,8 @@ class OnTheMapClient {
         urlRequest.httpBody = try! JSONEncoder().encode(request)
         
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            handleResponse(data: data, error: error, responseType: responseType, completionHandler: completionHandler)
+            handleResponse(data: data, error: error, responseType: responseType,
+                           skipFirstFiveCharacters: skipFirstFiveCharacters,completionHandler: completionHandler)
         }
         task.resume()
     }
@@ -71,6 +90,7 @@ class OnTheMapClient {
     private class func handleResponse<ResponseType: Decodable>(data: Data?,
                                                                error: Error?,
                                                                responseType: ResponseType.Type,
+                                                               skipFirstFiveCharacters: Bool,
                                                                completionHandler: @escaping (ResponseType?, Error?) -> Void) {
         let callCompletionHandler = { (response: ResponseType?, error: Error?) in
             DispatchQueue.main.async {
@@ -78,11 +98,17 @@ class OnTheMapClient {
             }
         }
         
-        guard let data = data else {
+        guard var data = data else {
             callCompletionHandler(nil, error)
             return
         }
         
+        /**
+         FOR ALL RESPONSES FROM THE UDACITY API, YOU WILL NEED TO SKIP THE FIRST 5 CHARACTERS OF THE RESPONSE.
+         These characters are used for security purposes. In the upcoming examples,
+         you will see that we subset the response data in order to skip over the first 5 characters.
+        */
+        data = data.subdata(in: 5..<data.count)
         do {
             let response = try JSONDecoder().decode(ResponseType.self, from: data)
             callCompletionHandler(response, nil)

@@ -15,6 +15,9 @@
 		18D8768422E5CACD00028D7A /* OnTheMapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8768322E5CACD00028D7A /* OnTheMapClient.swift */; };
 		18D8768622E5CCBD00028D7A /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8768522E5CCBD00028D7A /* ErrorResponse.swift */; };
 		18D8768822E5CD8C00028D7A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8768722E5CD8C00028D7A /* UIViewController+Extension.swift */; };
+		18D8768A22E5CF3000028D7A /* UdacityCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8768922E5CF3000028D7A /* UdacityCredentials.swift */; };
+		18D8768C22E5CF5D00028D7A /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8768B22E5CF5D00028D7A /* LoginRequest.swift */; };
+		18D8768E22E5D13B00028D7A /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8768D22E5D13B00028D7A /* LoginResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		18D8768322E5CACD00028D7A /* OnTheMapClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapClient.swift; sourceTree = "<group>"; };
 		18D8768522E5CCBD00028D7A /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		18D8768722E5CD8C00028D7A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		18D8768922E5CF3000028D7A /* UdacityCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityCredentials.swift; sourceTree = "<group>"; };
+		18D8768B22E5CF5D00028D7A /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		18D8768D22E5D13B00028D7A /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,8 @@
 		18D8767F22E5CA9500028D7A /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				18D8768922E5CF3000028D7A /* UdacityCredentials.swift */,
+				18D8768B22E5CF5D00028D7A /* LoginRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -110,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				18D8768522E5CCBD00028D7A /* ErrorResponse.swift */,
+				18D8768D22E5D13B00028D7A /* LoginResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -204,6 +213,9 @@
 				18D8766D22E5AA3100028D7A /* ViewController.swift in Sources */,
 				18D8766B22E5AA3100028D7A /* AppDelegate.swift in Sources */,
 				18D8768822E5CD8C00028D7A /* UIViewController+Extension.swift in Sources */,
+				18D8768A22E5CF3000028D7A /* UdacityCredentials.swift in Sources */,
+				18D8768C22E5CF5D00028D7A /* LoginRequest.swift in Sources */,
+				18D8768E22E5D13B00028D7A /* LoginResponse.swift in Sources */,
 				18D8768622E5CCBD00028D7A /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
