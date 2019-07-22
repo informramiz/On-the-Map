@@ -36,7 +36,7 @@ class OnTheMapClient {
      generic type `ResponseType`. We need this because in Swift we can't specialize functions by writing them like `taskForGetRequest<MyType>(...)`
      as this syntax is invalid in Swift. So the only way to receive type info is to pass type info as param
      */
-    @discardableResult class func taskForGetRequest<ResponseType: Decodable>(url: URL,
+    @discardableResult private class func taskForGetRequest<ResponseType: Decodable>(url: URL,
                                                                              responseType: ResponseType.Type,
                                                                              completionHandler: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -51,7 +51,7 @@ class OnTheMapClient {
      generic type `ResponseType`. We need this because in Swift we can't specialize functions by writing them like `taskForPostRequest<MyType>(...)`
      as this syntax is invalid in Swift. So the only way to receive type info is to pass type info as param
      */
-    class func taskForPostRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL,
+    private class func taskForPostRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL,
                                                                                    request: RequestType,
                                                                                    responseType: ResponseType.Type,
                                                                                    completionHandler: @escaping (ResponseType?, Error?) -> Void) {
