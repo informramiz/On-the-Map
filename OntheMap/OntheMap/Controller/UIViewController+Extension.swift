@@ -13,7 +13,7 @@ extension UIViewController {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
-    func showErrorAlert(message: String) {
+    func showAlert(message: String) {
         let alertController = UIAlertController()
         alertController.message = message
         

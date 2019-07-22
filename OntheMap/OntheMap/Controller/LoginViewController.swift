@@ -20,7 +20,13 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginButtonTapped(_ sender: Any) {
-        
+        OnTheMapClient.login(email: emailTextField.text!, password: passwordTextField.text!) { success, error in
+            if success {
+                self.showAlert(message: "Login successful")
+            } else {
+                self.showAlert(message: error?.localizedDescription ?? "Login Failed")
+            }
+        }
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
