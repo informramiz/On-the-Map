@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="43" width="300" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ks1-4J-aCk">
                                         <rect key="frame" x="0.0" y="86" width="300" height="30"/>
@@ -39,6 +39,9 @@
                                         <state key="normal" title="LOG IN">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p67-08-92v"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -60,6 +63,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IG3-Vh-xIx">
                                         <rect key="frame" x="171" y="0.0" width="54" height="30"/>
                                         <state key="normal" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="signUpButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DXe-nw-vbD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -76,6 +82,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="TsT-bI-kPB" id="bF2-fg-4Gv"/>
+                        <outlet property="loginButton" destination="Ks1-4J-aCk" id="hgW-tX-BPa"/>
+                        <outlet property="passwordTextField" destination="pGv-5e-zDq" id="WHU-TO-E5e"/>
+                        <outlet property="signUpButton" destination="IG3-Vh-xIx" id="EBm-tn-Ehn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
