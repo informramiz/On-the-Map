@@ -23,6 +23,11 @@ struct StudentLocation: Codable {
 }
 
 extension StudentLocation {
+    var fullName: String {
+        get {
+            return "\(firstName) \(lastName)"
+        }
+    }
     func toCoordinate2D() -> CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
@@ -30,7 +35,7 @@ extension StudentLocation {
     func toMKPointAnnotation() -> MKPointAnnotation {
         let annotation = MKPointAnnotation()
         annotation.coordinate = toCoordinate2D()
-        annotation.title = "\(firstName) \(lastName)"
+        annotation.title = fullName
         annotation.subtitle = mediaURL
         return annotation
     }

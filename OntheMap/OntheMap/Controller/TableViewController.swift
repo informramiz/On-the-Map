@@ -13,6 +13,8 @@ class TableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -28,4 +30,17 @@ class TableViewController: UIViewController {
     }
     */
 
+}
+
+extension TableViewController : UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return AppData.studentLocations.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationTableViewCell")!
+        cell.textLabel?.text = AppData.studentLocations[indexPath.row].fullName
+        cell.detailTextLabel?.text = AppData.studentLocations[indexPath.row].mediaURL
+        return cell
+    }
 }
