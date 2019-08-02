@@ -23,10 +23,10 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTapped(_ sender: Any) {
         loggingIn(true)
         OnTheMapClient.login(email: emailTextField.text!, password: passwordTextField.text!) { success, error in
-            self.loggingIn(false)
             if success {
-                self.performSegue(withIdentifier: "showLocations", sender: nil)
+                self.fetchStudentLocations()
             } else {
+                self.loggingIn(false)
                 self.showAlert(message: error?.localizedDescription ?? "Login Failed")
             }
         }
@@ -50,21 +50,15 @@ class LoginViewController: UIViewController {
         signUpButton.isEnabled = !isLogginIn
     }
     
-    private func getUserData() {
-        loggingIn(true)
-        OnTheMapClient.getUserData { (response, error) in
+    private func fetchStudentLocations() {
+        OnTheMapClient.getStudentLocations { (success, error) in
             self.loggingIn(false)
-            guard let response = response else {
-                self.showAlert(message: error?.localizedDescription ?? "Failed to get user data.")
-                return
+            if success {
+                self.performSegue(withIdentifier: "showLocations", sender: nil)
+            } else {
+                self.showAlert(message: error?.localizedDescription ?? "Login Failed")
             }
-            
-            print("Last name: " + response.lastName)
         }
-    }
-    
-    private func logout() {
-        OnTheMapClient.logout(completionHandler: nil)
     }
 }
 

@@ -23,6 +23,7 @@
 		B4B20F4722F40C69008E94BF /* StudentLocationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20F4622F40C69008E94BF /* StudentLocationsResponse.swift */; };
 		B4B20F4922F418F4008E94BF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20F4822F418F4008E94BF /* MapViewController.swift */; };
 		B4B20F4B22F41A5A008E94BF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20F4A22F41A5A008E94BF /* TableViewController.swift */; };
+		B4B20F4D22F41AEC008E94BF /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20F4C22F41AEC008E94BF /* AppData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B4B20F4622F40C69008E94BF /* StudentLocationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationsResponse.swift; sourceTree = "<group>"; };
 		B4B20F4822F418F4008E94BF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B4B20F4A22F41A5A008E94BF /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		B4B20F4C22F41AEC008E94BF /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppData.swift; path = OntheMap/Controller/AppData.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 		18D8768222E5CAB300028D7A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B4B20F4C22F41AEC008E94BF /* AppData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				18D8768E22E5D13B00028D7A /* LoginResponse.swift in Sources */,
 				B4B20F4522F40A8A008E94BF /* StudentLocation.swift in Sources */,
 				18D8768622E5CCBD00028D7A /* ErrorResponse.swift in Sources */,
+				B4B20F4D22F41AEC008E94BF /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
