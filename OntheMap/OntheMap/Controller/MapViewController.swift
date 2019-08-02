@@ -11,11 +11,24 @@ import MapKit
 
 class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
+    private var mapAnnotations = [MKPointAnnotation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupAnnotations()
+    }
+    
+    private func setupAnnotations() {
+        for location in AppData.studentLocations {
+            mapAnnotations.append(location.toMKPointAnnotation())
+        }
+        mapView.addAnnotations(mapAnnotations)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
 
