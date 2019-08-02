@@ -25,8 +25,8 @@ class LoginViewController: UIViewController {
         OnTheMapClient.login(email: emailTextField.text!, password: passwordTextField.text!) { success, error in
             self.loggingIn(false)
             if success {
+                self.logout()
                 self.showAlert(message: "Login successful")
-                self.getUserData()
             } else {
                 self.showAlert(message: error?.localizedDescription ?? "Login Failed")
             }
@@ -62,6 +62,10 @@ class LoginViewController: UIViewController {
             
             print("Last name: " + response.lastName)
         }
+    }
+    
+    private func logout() {
+        OnTheMapClient.logout(completionHandler: nil)
     }
 }
 
