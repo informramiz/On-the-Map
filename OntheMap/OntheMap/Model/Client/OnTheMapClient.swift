@@ -21,12 +21,14 @@ class OnTheMapClient {
         case login
         case signUp
         case getUserData
+        case getStudentLocations
         
         var stringValue: String {
             switch self {
             case .login: return Endpoints.baseUrl + "session"
             case .signUp: return "https://www.google.com/url?q=https://www.udacity.com/account/auth%23!/signup&sa=D&ust=1563790146333000"
             case .getUserData: return Endpoints.baseUrl + "users/" + Auth.userId
+            case .getStudentLocations: return Endpoints.baseUrl + "StudentLocation?limit=100&=-updatedAt"
             }
         }
         
@@ -50,6 +52,10 @@ class OnTheMapClient {
     
     class func getUserData(completionHandler: @escaping (UserDataResponse?, Error?) -> Void) {
         taskForGetRequest(url: Endpoints.getUserData.url, responseType: UserDataResponse.self, skipFirstFiveCharacters: true, completionHandler: completionHandler)
+    }
+    
+    class func getStudentLocations(completionHandler: @escaping (StudentLocationsResponse?, Error?) -> Void) {
+        taskForGetRequest(url: Endpoints.getStudentLocations.url, responseType: StudentLocationsResponse.self, skipFirstFiveCharacters: false, completionHandler: completionHandler)
     }
     
     /*-----------------------------------Helper Functions below-------------------------------------*/
@@ -116,7 +122,9 @@ class OnTheMapClient {
          These characters are used for security purposes. In the upcoming examples,
          you will see that we subset the response data in order to skip over the first 5 characters.
         */
-        data = data.subdata(in: 5..<data.count)
+        if skipFirstFiveCharacters {
+            data = data.subdata(in: 5..<data.count)
+        }
         let string = String(data: data, encoding: .utf8) ?? "Empty response"
         print("response: " + string)
         do {

@@ -25,8 +25,8 @@ class LoginViewController: UIViewController {
         OnTheMapClient.login(email: emailTextField.text!, password: passwordTextField.text!) { success, error in
             self.loggingIn(false)
             if success {
-                self.logout()
                 self.showAlert(message: "Login successful")
+                self.fetchStudentLocations()
             } else {
                 self.showAlert(message: error?.localizedDescription ?? "Login Failed")
             }
@@ -66,6 +66,18 @@ class LoginViewController: UIViewController {
     
     private func logout() {
         OnTheMapClient.logout(completionHandler: nil)
+    }
+    
+    private func fetchStudentLocations() {
+        OnTheMapClient.getStudentLocations { (locationData, error) in
+            guard let locationData = locationData else {
+                print(error)
+                return
+            }
+            
+            print("Location data fetched successfully")
+            print("First name: " + locationData.results[0].firstName)
+        }
     }
 }
 
