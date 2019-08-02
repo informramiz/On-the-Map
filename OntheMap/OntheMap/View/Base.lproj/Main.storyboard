@@ -113,7 +113,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Rs0-pQ-hSe"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="List" id="FXX-Ph-Agf"/>
+                    <tabBarItem key="tabBarItem" title="List" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="FXX-Ph-Agf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giD-y2-yWu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -140,7 +140,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oOy-bV-lTa"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="Ebc-ac-YXX"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="Ebc-ac-YXX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7w-xb-Xe2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,4 +165,10 @@
             <point key="canvasLocation" x="910" y="138"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_listview-deselected" width="75" height="50"/>
+        <image name="icon_listview-selected" width="75" height="50"/>
+        <image name="icon_mapview-deselected" width="75" height="50"/>
+        <image name="icon_mapview-selected" width="75" height="50"/>
+    </resources>
 </document>
