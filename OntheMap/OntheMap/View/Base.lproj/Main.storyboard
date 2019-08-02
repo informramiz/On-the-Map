@@ -96,11 +96,62 @@
                         <outlet property="loginButton" destination="Ks1-4J-aCk" id="hgW-tX-BPa"/>
                         <outlet property="passwordTextField" destination="pGv-5e-zDq" id="WHU-TO-E5e"/>
                         <outlet property="signUpButton" destination="IG3-Vh-xIx" id="EBm-tn-Ehn"/>
+                        <segue destination="bBh-Q3-s2z" kind="show" identifier="showLocations" id="Cbz-h8-tuH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+            <point key="canvasLocation" x="141" y="138"/>
+        </scene>
+        <!--List-->
+        <scene sceneID="oPB-hl-dh4">
+            <objects>
+                <viewController id="pzj-ja-W9p" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QGf-1R-zPb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Rs0-pQ-hSe"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="List" id="FXX-Ph-Agf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="giD-y2-yWu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="463"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="2cy-f4-4l9">
+            <objects>
+                <viewController id="CYY-05-h8F" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eRG-TN-h4T">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oOy-bV-lTa"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="Ebc-ac-YXX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7w-xb-Xe2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="-185"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="9J1-0E-28t">
+            <objects>
+                <tabBarController id="bBh-Q3-s2z" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rgn-8C-WK6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="CYY-05-h8F" kind="relationship" relationship="viewControllers" id="qib-wn-0GW"/>
+                        <segue destination="pzj-ja-W9p" kind="relationship" relationship="viewControllers" id="d3V-q3-dtO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zu2-YV-jQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="910" y="138"/>
         </scene>
     </scenes>
 </document>
