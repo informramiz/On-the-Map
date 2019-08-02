@@ -126,7 +126,18 @@
                     <view key="view" contentMode="scaleToFill" id="eRG-TN-h4T">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="52p-d9-MWR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="52p-d9-MWR" firstAttribute="top" secondItem="oOy-bV-lTa" secondAttribute="top" id="MyU-0z-ajU"/>
+                            <constraint firstItem="52p-d9-MWR" firstAttribute="leading" secondItem="oOy-bV-lTa" secondAttribute="leading" id="nnp-hD-P65"/>
+                            <constraint firstItem="oOy-bV-lTa" firstAttribute="bottom" secondItem="52p-d9-MWR" secondAttribute="bottom" id="qk9-XJ-OtS"/>
+                            <constraint firstItem="oOy-bV-lTa" firstAttribute="trailing" secondItem="52p-d9-MWR" secondAttribute="trailing" id="zX7-py-j7t"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oOy-bV-lTa"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="Ebc-ac-YXX"/>
