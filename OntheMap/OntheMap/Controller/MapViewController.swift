@@ -15,6 +15,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
 
         // Do any additional setup after loading the view.
         setupAnnotations()
@@ -51,6 +52,7 @@ extension MapViewController : MKMapViewDelegate {
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reusePin)
             pinView!.canShowCallout = true
+            pinView!.pinTintColor = .red
             pinView!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         } else {
             pinView!.annotation = annotation
