@@ -43,4 +43,14 @@ extension TableViewController : UITableViewDataSource, UITableViewDelegate {
         cell.detailTextLabel?.text = AppData.studentLocations[indexPath.row].mediaURL
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let url = URL(string: AppData.studentLocations[indexPath.row].mediaURL) {
+            openUrl(url: url)
+        } else {
+            showAlert(message: "No valid URL found")
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
