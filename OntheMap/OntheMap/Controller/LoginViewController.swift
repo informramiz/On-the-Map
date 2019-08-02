@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
             self.loggingIn(false)
             if success {
                 self.showAlert(message: "Login successful")
+                self.getUserData()
             } else {
                 self.showAlert(message: error?.localizedDescription ?? "Login Failed")
             }
@@ -48,6 +49,19 @@ class LoginViewController: UIViewController {
         passwordTextField.isEnabled = !isLogginIn
         loginButton.isEnabled = !isLogginIn
         signUpButton.isEnabled = !isLogginIn
+    }
+    
+    private func getUserData() {
+        loggingIn(true)
+        OnTheMapClient.getUserData { (response, error) in
+            self.loggingIn(false)
+            guard let response = response else {
+                self.showAlert(message: error?.localizedDescription ?? "Failed to get user data.")
+                return
+            }
+            
+            print("Last name: " + response.lastName)
+        }
     }
 }
 

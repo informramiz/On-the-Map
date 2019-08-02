@@ -20,11 +20,13 @@ class OnTheMapClient {
         
         case login
         case signUp
+        case getUserData
         
         var stringValue: String {
             switch self {
             case .login: return Endpoints.baseUrl + "session"
             case .signUp: return "https://www.google.com/url?q=https://www.udacity.com/account/auth%23!/signup&sa=D&ust=1563790146333000"
+            case .getUserData: return Endpoints.baseUrl + "users/" + Auth.userId
             }
         }
         
@@ -44,6 +46,10 @@ class OnTheMapClient {
                 completion(false, error)
             }
         }
+    }
+    
+    class func getUserData(completionHandler: @escaping (UserDataResponse?, Error?) -> Void) {
+        taskForGetRequest(url: Endpoints.getUserData.url, responseType: UserDataResponse.self, skipFirstFiveCharacters: true, completionHandler: completionHandler)
     }
     
     /*-----------------------------------Helper Functions below-------------------------------------*/
@@ -111,6 +117,8 @@ class OnTheMapClient {
          you will see that we subset the response data in order to skip over the first 5 characters.
         */
         data = data.subdata(in: 5..<data.count)
+        let string = String(data: data, encoding: .utf8) ?? "Empty response"
+        print("response: " + string)
         do {
             let response = try JSONDecoder().decode(ResponseType.self, from: data)
             callCompletionHandler(response, nil)

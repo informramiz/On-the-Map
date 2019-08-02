@@ -18,6 +18,7 @@
 		18D8768A22E5CF3000028D7A /* UdacityCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8768922E5CF3000028D7A /* UdacityCredentials.swift */; };
 		18D8768C22E5CF5D00028D7A /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8768B22E5CF5D00028D7A /* LoginRequest.swift */; };
 		18D8768E22E5D13B00028D7A /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8768D22E5D13B00028D7A /* LoginResponse.swift */; };
+		B4B20F4322F3F3E8008E94BF /* UserDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20F4222F3F3E8008E94BF /* UserDataResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		18D8768922E5CF3000028D7A /* UdacityCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityCredentials.swift; sourceTree = "<group>"; };
 		18D8768B22E5CF5D00028D7A /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		18D8768D22E5D13B00028D7A /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		B4B20F4222F3F3E8008E94BF /* UserDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				18D8768522E5CCBD00028D7A /* ErrorResponse.swift */,
 				18D8768D22E5D13B00028D7A /* LoginResponse.swift */,
+				B4B20F4222F3F3E8008E94BF /* UserDataResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4B20F4322F3F3E8008E94BF /* UserDataResponse.swift in Sources */,
 				18D8768422E5CACD00028D7A /* OnTheMapClient.swift in Sources */,
 				18D8766D22E5AA3100028D7A /* LoginViewController.swift in Sources */,
 				18D8766B22E5AA3100028D7A /* AppDelegate.swift in Sources */,
