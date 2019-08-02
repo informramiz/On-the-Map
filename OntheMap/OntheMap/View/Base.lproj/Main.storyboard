@@ -122,7 +122,7 @@
         <!--Map-->
         <scene sceneID="2cy-f4-4l9">
             <objects>
-                <viewController id="CYY-05-h8F" sceneMemberID="viewController">
+                <viewController id="CYY-05-h8F" customClass="MapViewController" customModule="OntheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eRG-TN-h4T">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,6 +141,9 @@
                         <viewLayoutGuide key="safeArea" id="oOy-bV-lTa"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="Ebc-ac-YXX"/>
+                    <connections>
+                        <outlet property="mapView" destination="52p-d9-MWR" id="wmy-Y8-jcC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7w-xb-Xe2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
