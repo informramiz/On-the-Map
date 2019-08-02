@@ -110,10 +110,25 @@
                     <view key="view" contentMode="scaleToFill" id="QGf-1R-zPb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2IP-AE-kBK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rs0-pQ-hSe" firstAttribute="bottom" secondItem="2IP-AE-kBK" secondAttribute="bottom" id="GQj-fU-AfC"/>
+                            <constraint firstItem="2IP-AE-kBK" firstAttribute="top" secondItem="Rs0-pQ-hSe" secondAttribute="top" id="Occ-HO-jVD"/>
+                            <constraint firstItem="2IP-AE-kBK" firstAttribute="leading" secondItem="Rs0-pQ-hSe" secondAttribute="leading" id="nIn-tT-MES"/>
+                            <constraint firstItem="Rs0-pQ-hSe" firstAttribute="trailing" secondItem="2IP-AE-kBK" secondAttribute="trailing" id="qyL-5C-uQm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Rs0-pQ-hSe"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="FXX-Ph-Agf"/>
+                    <connections>
+                        <outlet property="tableView" destination="2IP-AE-kBK" id="6Wm-fN-JeC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giD-y2-yWu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
