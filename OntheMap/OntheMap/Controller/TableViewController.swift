@@ -10,6 +10,8 @@ import UIKit
 
 class TableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addNavBarItem: UIBarButtonItem!
+    @IBOutlet weak var refreshNavBarItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +21,8 @@ class TableViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func onRefresh(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 

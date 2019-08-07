@@ -175,11 +175,21 @@
                     <tabBarItem key="tabBarItem" title="List" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="FXX-Ph-Agf"/>
                     <navigationItem key="navigationItem" title="On the Map" id="6cy-MT-DPQ">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="SKs-os-wMX"/>
-                            <barButtonItem systemItem="refresh" id="O5r-9o-aVj"/>
+                            <barButtonItem systemItem="add" id="SKs-os-wMX">
+                                <connections>
+                                    <segue destination="pPD-bp-ean" kind="presentation" id="qdw-hJ-Ezb"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="O5r-9o-aVj">
+                                <connections>
+                                    <action selector="onRefresh:" destination="pzj-ja-W9p" id="M3i-1O-hi4"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addNavBarItem" destination="SKs-os-wMX" id="MpE-bD-Qh0"/>
+                        <outlet property="refreshNavBarItem" destination="O5r-9o-aVj" id="OTe-2g-12h"/>
                         <outlet property="tableView" destination="2IP-AE-kBK" id="6Wm-fN-JeC"/>
                     </connections>
                 </viewController>
@@ -228,17 +238,49 @@
                     <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="Ebc-ac-YXX"/>
                     <navigationItem key="navigationItem" title="On the Map" id="vW5-R1-9bd">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="TSn-Eu-OXZ"/>
-                            <barButtonItem systemItem="refresh" id="0L4-0k-Uys"/>
+                            <barButtonItem systemItem="add" id="TSn-Eu-OXZ">
+                                <connections>
+                                    <segue destination="pPD-bp-ean" kind="presentation" id="Obi-Sy-zzg"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="0L4-0k-Uys">
+                                <connections>
+                                    <action selector="onRefresh:" destination="CYY-05-h8F" id="ScT-ew-Lkl"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addNavBarItem" destination="TSn-Eu-OXZ" id="rlw-jf-6pR"/>
                         <outlet property="mapView" destination="JnX-Fx-V5Y" id="6IB-5Y-EZT"/>
+                        <outlet property="refreshNavBarItem" destination="0L4-0k-Uys" id="7fW-08-aSN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7w-xb-Xe2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2616" y="-204"/>
+        </scene>
+        <!--Add View Controller-->
+        <scene sceneID="ST1-xp-lVR">
+            <objects>
+                <viewController id="U56-ZK-hwZ" userLabel="Add View Controller" customClass="AddLocationViewController" customModule="OntheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DvR-h0-0Wv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="XUE-Zu-uUD"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Location" id="iLR-XG-Rkx">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mIQ-Zk-bY9" userLabel="Cancel">
+                            <connections>
+                                <action selector="onCancel:" destination="U56-ZK-hwZ" id="9oI-Hi-DoY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DMs-8M-jBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4556.521739130435" y="113.83928571428571"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9J1-0E-28t">
@@ -258,6 +300,24 @@
             </objects>
             <point key="canvasLocation" x="910" y="138"/>
         </scene>
+        <!--Add Location Nav Controller-->
+        <scene sceneID="JgI-3G-mXj">
+            <objects>
+                <navigationController title="Add Location Nav Controller" automaticallyAdjustsScrollViewInsets="NO" id="pPD-bp-ean" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wp3-ZS-Ce6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="U56-ZK-hwZ" kind="relationship" relationship="rootViewController" id="LQm-Yz-bfc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="orn-nc-cMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3646.376811594203" y="113.83928571428571"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon_listview-deselected" width="75" height="50"/>
@@ -266,4 +326,7 @@
         <image name="icon_mapview-selected" width="75" height="50"/>
         <image name="icon_pin" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="qdw-hJ-Ezb"/>
+    </inferredMetricsTieBreakers>
 </document>

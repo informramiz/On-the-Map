@@ -12,6 +12,8 @@ import MapKit
 class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     private var mapAnnotations = [MKPointAnnotation]()
+    @IBOutlet weak var addNavBarItem: UIBarButtonItem!
+    @IBOutlet weak var refreshNavBarItem: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,10 @@ class MapViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setupAnnotations()
+    }
+    
+    @IBAction func onRefresh(_ sender: Any) {
+        
     }
     
     private func setupAnnotations() {
