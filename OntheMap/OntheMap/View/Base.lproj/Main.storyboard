@@ -120,7 +120,7 @@
             </objects>
             <point key="canvasLocation" x="1828" y="508"/>
         </scene>
-        <!--List-->
+        <!--On the Map-->
         <scene sceneID="oPB-hl-dh4">
             <objects>
                 <viewController id="pzj-ja-W9p" customClass="TableViewController" customModule="OntheMap" customModuleProvider="target" sceneMemberID="viewController">
@@ -173,8 +173,11 @@
                         <viewLayoutGuide key="safeArea" id="Rs0-pQ-hSe"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="FXX-Ph-Agf"/>
-                    <navigationItem key="navigationItem" id="6cy-MT-DPQ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="O5r-9o-aVj"/>
+                    <navigationItem key="navigationItem" title="On the Map" id="6cy-MT-DPQ">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="SKs-os-wMX"/>
+                            <barButtonItem systemItem="refresh" id="O5r-9o-aVj"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="2IP-AE-kBK" id="6Wm-fN-JeC"/>
@@ -224,7 +227,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="Ebc-ac-YXX"/>
                     <navigationItem key="navigationItem" title="On the Map" id="vW5-R1-9bd">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="0L4-0k-Uys"/>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="TSn-Eu-OXZ"/>
+                            <barButtonItem systemItem="refresh" id="0L4-0k-Uys"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="JnX-Fx-V5Y" id="6IB-5Y-EZT"/>
