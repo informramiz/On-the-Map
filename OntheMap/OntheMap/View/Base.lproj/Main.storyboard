@@ -103,6 +103,23 @@
             </objects>
             <point key="canvasLocation" x="141" y="138"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="byY-lh-PhN">
+            <objects>
+                <navigationController id="gvA-2a-w0A" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="xT1-R5-Q8a"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="avM-Za-Ybi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pzj-ja-W9p" kind="relationship" relationship="rootViewController" id="OJj-FP-t6j"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ssx-9a-SPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="508"/>
+        </scene>
         <!--List-->
         <scene sceneID="oPB-hl-dh4">
             <objects>
@@ -112,7 +129,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2IP-AE-kBK">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationTableViewCell" textLabel="RRD-1r-C80" detailTextLabel="ZXu-Y8-1Bf" imageView="0FL-fG-POM" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="1dy-lx-B6f">
@@ -156,15 +173,35 @@
                         <viewLayoutGuide key="safeArea" id="Rs0-pQ-hSe"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="FXX-Ph-Agf"/>
+                    <navigationItem key="navigationItem" id="6cy-MT-DPQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="O5r-9o-aVj"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="2IP-AE-kBK" id="6Wm-fN-JeC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giD-y2-yWu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1827.5362318840582" y="462.72321428571428"/>
+            <point key="canvasLocation" x="2616" y="508"/>
         </scene>
-        <!--Map-->
+        <!--Navigation Controller-->
+        <scene sceneID="dV9-cY-vH6">
+            <objects>
+                <navigationController id="sie-Qi-04i" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="959-2E-I9H"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mc2-Vm-j4b">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CYY-05-h8F" kind="relationship" relationship="rootViewController" id="aa8-7K-uNv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nxn-l6-P2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="-204"/>
+        </scene>
+        <!--On the Map-->
         <scene sceneID="2cy-f4-4l9">
             <objects>
                 <viewController id="CYY-05-h8F" customClass="MapViewController" customModule="OntheMap" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,27 +209,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="52p-d9-MWR">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JnX-Fx-V5Y">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="52p-d9-MWR" firstAttribute="top" secondItem="oOy-bV-lTa" secondAttribute="top" id="MyU-0z-ajU"/>
-                            <constraint firstItem="52p-d9-MWR" firstAttribute="leading" secondItem="oOy-bV-lTa" secondAttribute="leading" id="nnp-hD-P65"/>
-                            <constraint firstItem="oOy-bV-lTa" firstAttribute="bottom" secondItem="52p-d9-MWR" secondAttribute="bottom" id="qk9-XJ-OtS"/>
-                            <constraint firstItem="oOy-bV-lTa" firstAttribute="trailing" secondItem="52p-d9-MWR" secondAttribute="trailing" id="zX7-py-j7t"/>
+                            <constraint firstItem="JnX-Fx-V5Y" firstAttribute="leading" secondItem="oOy-bV-lTa" secondAttribute="leading" id="EYv-BD-EwA"/>
+                            <constraint firstItem="oOy-bV-lTa" firstAttribute="trailing" secondItem="JnX-Fx-V5Y" secondAttribute="trailing" id="JVZ-hR-z3K"/>
+                            <constraint firstItem="oOy-bV-lTa" firstAttribute="bottom" secondItem="JnX-Fx-V5Y" secondAttribute="bottom" id="kcY-ge-CqK"/>
+                            <constraint firstItem="JnX-Fx-V5Y" firstAttribute="top" secondItem="oOy-bV-lTa" secondAttribute="top" id="xbx-XA-Hjc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oOy-bV-lTa"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="Ebc-ac-YXX"/>
+                    <navigationItem key="navigationItem" title="On the Map" id="vW5-R1-9bd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="0L4-0k-Uys"/>
+                        <connections>
+                            <outlet property="titleView" destination="eRG-TN-h4T" id="JMV-lQ-ZVc"/>
+                        </connections>
+                    </navigationItem>
                     <connections>
-                        <outlet property="mapView" destination="52p-d9-MWR" id="wmy-Y8-jcC"/>
+                        <outlet property="mapView" destination="JnX-Fx-V5Y" id="6IB-5Y-EZT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7w-xb-Xe2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828" y="-185"/>
+            <point key="canvasLocation" x="2616" y="-204"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9J1-0E-28t">
@@ -204,8 +247,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="CYY-05-h8F" kind="relationship" relationship="viewControllers" id="qib-wn-0GW"/>
-                        <segue destination="pzj-ja-W9p" kind="relationship" relationship="viewControllers" id="d3V-q3-dtO"/>
+                        <segue destination="sie-Qi-04i" kind="relationship" relationship="viewControllers" id="0lj-uo-fQW"/>
+                        <segue destination="gvA-2a-w0A" kind="relationship" relationship="viewControllers" id="6B3-Vo-rEG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zu2-YV-jQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
