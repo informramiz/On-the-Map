@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				18D8766C22E5AA3100028D7A /* LoginViewController.swift */,
-				18D8768722E5CD8C00028D7A /* UIViewController+Extension.swift */,
+				B455086E2301876B00EE277D /* extensions */,
 				B4B20F4822F418F4008E94BF /* MapViewController.swift */,
 				B4B20F4A22F41A5A008E94BF /* TableViewController.swift */,
 				B44E933822FB6BB2001E7B42 /* AddLocationViewController.swift */,
@@ -157,6 +157,14 @@
 				B4B20F4C22F41AEC008E94BF /* AppData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		B455086E2301876B00EE277D /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				18D8768722E5CD8C00028D7A /* UIViewController+Extension.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
