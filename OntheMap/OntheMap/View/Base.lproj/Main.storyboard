@@ -293,6 +293,9 @@
                                             <action selector="findLocation:" destination="U56-ZK-hwZ" eventType="touchUpInside" id="h6P-DQ-U7E"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lib-kW-Tt6">
+                                        <rect key="frame" x="0.0" y="114" width="300" height="20"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="vOC-hI-TS2"/>
@@ -314,6 +317,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="lib-kW-Tt6" id="CRD-p3-AwA"/>
                         <outlet property="addressTextField" destination="j2E-6y-ip5" id="tPn-Vn-Q9Z"/>
                         <outlet property="findLocationButton" destination="tBI-7h-fVe" id="8YO-7y-Smf"/>
                         <outlet property="urlTextField" destination="Soo-oV-DUo" id="yIk-Bx-leo"/>

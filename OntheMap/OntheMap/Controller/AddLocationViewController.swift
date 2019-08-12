@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import MapKit
 
 class AddLocationViewController: UIViewController {
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var findLocationButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
