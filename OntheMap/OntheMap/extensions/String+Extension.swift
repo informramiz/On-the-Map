@@ -11,7 +11,7 @@ import UIKit
 
 extension String {
     func isValidUrl() -> Bool {
-        guard self.isEmpty else { return false }
+        guard !self.isEmpty else { return false }
         guard let url = URL(string: self) else { return false }
         
         return UIViewController.canOpenUrl(url: url)
