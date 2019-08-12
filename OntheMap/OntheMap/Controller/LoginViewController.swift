@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
                 self.fetchStudentLocations()
             } else {
                 self.loggingIn(false)
-                self.showAlert(message: error?.localizedDescription ?? "Login Failed")
+                self.showErrorAlert(message: error?.localizedDescription ?? "Login Failed")
             }
         }
     }
@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
             if success {
                 self.performSegue(withIdentifier: "showLocations", sender: nil)
             } else {
-                self.showAlert(message: error?.localizedDescription ?? "Login Failed")
+                self.showErrorAlert(message: error?.localizedDescription ?? "Login Failed")
             }
         }
     }
