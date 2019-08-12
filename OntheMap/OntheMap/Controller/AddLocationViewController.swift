@@ -26,9 +26,22 @@ class AddLocationViewController: UIViewController {
     }
     
     @IBAction func findLocation(_ sender: Any) {
+        guard isAllDataValid() else { return }
         geocode(address: addressTextField.text!) { (location) in
-            self.showAlert(title: "Location", message: "Location found successfully")
+            self.performSegue(withIdentifier: "ShowLocationOnMap", sender: location)
         }
+    }
+    
+    private func isAllDataValid() -> Bool {
+        if (addressTextField.text!.isEmpty) {
+            showErrorAlert(message: "Please enter a valid address")
+            return false
+        } else if (urlTextField.text!.isEmpty) {
+            showErrorAlert(message: "Please enter a valid url")
+            return false
+        }
+        
+        return true
     }
     
     private func geocode(address: String, onSuccess: @escaping (CLLocationCoordinate2D) -> Void) {
@@ -37,7 +50,7 @@ class AddLocationViewController: UIViewController {
         geocoder.geocodeAddressString(address) { (placemarks, error) in
             self.isActivityInProgress(inProgress: false)
             guard let placemarks = placemarks, placemarks.count > 0, placemarks.first?.location != nil else {
-                self.showErrorAlert(message: error?.localizedDescription ?? "Unable to find location for address")
+                self.showErrorAlert(message: "Unable to find location for the address")
                 return
             }
             
