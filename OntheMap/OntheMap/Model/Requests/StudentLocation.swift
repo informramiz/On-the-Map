@@ -18,8 +18,19 @@ struct StudentLocation: Codable {
     let mediaURL: String
     let uniqueKey: String
     let objectId: String
-    let createdAt: String
-    let updatedAt: String
+    let createdAt: String? = nil
+    let updatedAt: String? = nil
+    
+    init(address: String, url: String, userId: String, location: CLLocationCoordinate2D) {
+        self.firstName = "Raju"
+        self.lastName = "Raaj"
+        self.latitude = location.latitude
+        self.longitude = location.longitude
+        self.mapString = address
+        self.mediaURL = url
+        self.uniqueKey = userId
+        self.objectId = ""
+    }
 }
 
 extension StudentLocation {

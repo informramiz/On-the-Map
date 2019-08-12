@@ -10,4 +10,5 @@ import Foundation
 
 struct AppData {
     static var studentLocations: [StudentLocation] = []
+    static var userId: String = ""
 }

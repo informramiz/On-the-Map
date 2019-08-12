@@ -43,6 +43,7 @@ class OnTheMapClient {
             if let response = response {
                 Auth.sessionId = response.session.id
                 Auth.userId = response.account.key
+                AppData.userId = response.account.key
                 completion(true, nil)
             } else {
                 completion(false, error)

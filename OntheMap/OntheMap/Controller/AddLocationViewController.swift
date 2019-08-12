@@ -28,7 +28,7 @@ class AddLocationViewController: UIViewController {
     @IBAction func findLocation(_ sender: Any) {
         guard isAllDataValid() else { return }
         geocode(address: addressTextField.text!) { (location) in
-            self.performSegue(withIdentifier: "ShowLocationOnMap", sender: location)
+            self.gotoNextScreen(location: location)
         }
     }
     
@@ -58,6 +58,14 @@ class AddLocationViewController: UIViewController {
         }
     }
     
+    private func gotoNextScreen(location: CLLocationCoordinate2D) {
+        let studentLocation = StudentLocation(address: addressTextField.text!,
+                                              url: urlTextField.text!,
+                                              userId: AppData.userId,
+                                              location: location)
+        self.performSegue(withIdentifier: "ShowLocationOnMap", sender: studentLocation)
+    }
+    
     private func isActivityInProgress(inProgress: Bool) {
         findLocationButton.isEnabled = !inProgress
         if inProgress {
@@ -66,14 +74,13 @@ class AddLocationViewController: UIViewController {
             activityIndicator.stopAnimating()
         }
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let studentLocation = sender as! StudentLocation
+        let showLocationOnMapController = segue.destination as! ShowLocationOnMapViewController
+        showLocationOnMapController.studentLocation = studentLocation
     }
-    */
-
 }
