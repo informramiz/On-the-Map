@@ -36,7 +36,7 @@ class AddLocationViewController: UIViewController {
         if (addressTextField.text!.isEmpty) {
             showErrorAlert(message: "Please enter a valid address")
             return false
-        } else if (urlTextField.text!.isEmpty) {
+        } else if (!urlTextField.text!.isValidUrl()) {
             showErrorAlert(message: "Please enter a valid url")
             return false
         }
