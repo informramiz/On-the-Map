@@ -28,4 +28,8 @@ extension UIViewController {
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
     }
+    
+    static func canOpenUrl(url: URL) -> Bool {
+        return UIApplication.shared.canOpenURL(url)
+    }
 }

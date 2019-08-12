@@ -82,6 +82,7 @@
 			children = (
 				18D8767E22E5CA6E00028D7A /* Model */,
 				18D8766A22E5AA3100028D7A /* AppDelegate.swift */,
+				B455086E2301876B00EE277D /* extensions */,
 				18D8767D22E5CA5D00028D7A /* Controller */,
 				18D8767C22E5CA4B00028D7A /* View */,
 				18D8767622E5AA3500028D7A /* Info.plist */,
@@ -103,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				18D8766C22E5AA3100028D7A /* LoginViewController.swift */,
-				B455086E2301876B00EE277D /* extensions */,
 				B4B20F4822F418F4008E94BF /* MapViewController.swift */,
 				B4B20F4A22F41A5A008E94BF /* TableViewController.swift */,
 				B44E933822FB6BB2001E7B42 /* AddLocationViewController.swift */,
