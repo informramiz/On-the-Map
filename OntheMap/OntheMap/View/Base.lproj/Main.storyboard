@@ -269,7 +269,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OQD-1S-hy8">
-                                <rect key="frame" x="57" y="395" width="300" height="106"/>
+                                <rect key="frame" x="57" y="381" width="300" height="134"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j2E-6y-ip5">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
@@ -293,7 +293,7 @@
                                             <action selector="findLocation:" destination="U56-ZK-hwZ" eventType="touchUpInside" id="h6P-DQ-U7E"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lib-kW-Tt6">
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lib-kW-Tt6">
                                         <rect key="frame" x="0.0" y="114" width="300" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -321,11 +321,51 @@
                         <outlet property="addressTextField" destination="j2E-6y-ip5" id="tPn-Vn-Q9Z"/>
                         <outlet property="findLocationButton" destination="tBI-7h-fVe" id="8YO-7y-Smf"/>
                         <outlet property="urlTextField" destination="Soo-oV-DUo" id="yIk-Bx-leo"/>
+                        <segue destination="Chh-ZG-ASz" kind="showDetail" identifier="ShowLocationOnMap" id="JaZ-TO-KpH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DMs-8M-jBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4556.521739130435" y="113.83928571428571"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BJE-Oo-rVJ">
+            <objects>
+                <viewController id="Chh-ZG-ASz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DLi-Xv-ebA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Now-BS-lRk">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mj-IL-Vqf">
+                                <rect key="frame" x="20" y="802" width="374" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TWm-rV-tyr"/>
+                                </constraints>
+                                <state key="normal" title="FINISH">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ajx-al-XxL" firstAttribute="trailing" secondItem="1Mj-IL-Vqf" secondAttribute="trailing" constant="20" id="Kdl-pN-4xw"/>
+                            <constraint firstItem="ajx-al-XxL" firstAttribute="trailing" secondItem="Now-BS-lRk" secondAttribute="trailing" id="Z9j-fC-bkd"/>
+                            <constraint firstItem="1Mj-IL-Vqf" firstAttribute="leading" secondItem="ajx-al-XxL" secondAttribute="leading" constant="20" id="bew-vd-2eL"/>
+                            <constraint firstItem="Now-BS-lRk" firstAttribute="top" secondItem="ajx-al-XxL" secondAttribute="top" id="eyn-pK-UAX"/>
+                            <constraint firstItem="ajx-al-XxL" firstAttribute="bottom" secondItem="Now-BS-lRk" secondAttribute="bottom" id="kS7-Wn-1jx"/>
+                            <constraint firstItem="ajx-al-XxL" firstAttribute="bottom" secondItem="1Mj-IL-Vqf" secondAttribute="bottom" constant="20" id="kv2-l8-d6F"/>
+                            <constraint firstItem="Now-BS-lRk" firstAttribute="leading" secondItem="ajx-al-XxL" secondAttribute="leading" id="wDF-gI-fYw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ajx-al-XxL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7KT-RD-kri" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5421.739130434783" y="113.83928571428571"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9J1-0E-28t">
