@@ -9,7 +9,10 @@
 import UIKit
 
 class AddLocationViewController: UIViewController {
-
+    @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var urlTextField: UITextField!
+    @IBOutlet weak var findLocationButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +23,8 @@ class AddLocationViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func findLocation(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 

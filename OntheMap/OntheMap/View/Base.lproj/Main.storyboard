@@ -289,6 +289,9 @@
                                         <state key="normal" title="Find Location">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="findLocation:" destination="U56-ZK-hwZ" eventType="touchUpInside" id="h6P-DQ-U7E"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -310,6 +313,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addressTextField" destination="j2E-6y-ip5" id="tPn-Vn-Q9Z"/>
+                        <outlet property="findLocationButton" destination="tBI-7h-fVe" id="8YO-7y-Smf"/>
+                        <outlet property="urlTextField" destination="Soo-oV-DUo" id="yIk-Bx-leo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DMs-8M-jBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
