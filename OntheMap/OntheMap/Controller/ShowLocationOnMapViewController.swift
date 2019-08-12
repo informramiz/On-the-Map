@@ -17,6 +17,7 @@ class ShowLocationOnMapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.setCenter(studentLocation.toCoordinate2D(), animated: false)
         mapView.addAnnotation(studentLocation.toMKPointAnnotation())
         mapView.delegate = self
         // Do any additional setup after loading the view.
