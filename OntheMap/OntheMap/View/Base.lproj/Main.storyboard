@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U56-ZK-hwZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -321,7 +321,7 @@
                         <outlet property="addressTextField" destination="j2E-6y-ip5" id="tPn-Vn-Q9Z"/>
                         <outlet property="findLocationButton" destination="tBI-7h-fVe" id="8YO-7y-Smf"/>
                         <outlet property="urlTextField" destination="Soo-oV-DUo" id="yIk-Bx-leo"/>
-                        <segue destination="Chh-ZG-ASz" kind="showDetail" identifier="ShowLocationOnMap" id="JaZ-TO-KpH"/>
+                        <segue destination="Chh-ZG-ASz" kind="show" identifier="ShowLocationOnMap" id="mdV-lG-yPZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DMs-8M-jBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -337,7 +337,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Now-BS-lRk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mj-IL-Vqf">
                                 <rect key="frame" x="20" y="802" width="374" height="40"/>
@@ -402,6 +402,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="U56-ZK-hwZ" kind="relationship" relationship="rootViewController" id="BGE-zX-L6N"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="orn-nc-cMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
