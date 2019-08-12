@@ -26,6 +26,32 @@ class AddLocationViewController: UIViewController {
     }
     
     @IBAction func findLocation(_ sender: Any) {
+        geocode(address: addressTextField.text!) { (location) in
+            self.showAlert(title: "Location", message: "Location found successfully")
+        }
+    }
+    
+    private func geocode(address: String, onSuccess: @escaping (CLLocationCoordinate2D) -> Void) {
+        isActivityInProgress(inProgress: true)
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address) { (placemarks, error) in
+            self.isActivityInProgress(inProgress: false)
+            guard let placemarks = placemarks, placemarks.count > 0, placemarks.first?.location != nil else {
+                self.showErrorAlert(message: error?.localizedDescription ?? "Unable to find location for address")
+                return
+            }
+            
+            onSuccess(placemarks.first!.location!.coordinate)
+        }
+    }
+    
+    private func isActivityInProgress(inProgress: Bool) {
+        findLocationButton.isEnabled = !inProgress
+        if inProgress {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
     }
     /*
     // MARK: - Navigation
