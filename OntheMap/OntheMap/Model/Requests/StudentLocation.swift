@@ -17,7 +17,7 @@ struct StudentLocation: Codable {
     let mapString: String
     let mediaURL: String
     let uniqueKey: String
-    let objectId: String
+    let objectId: String? = nil
     let createdAt: String? = nil
     let updatedAt: String? = nil
     
@@ -29,7 +29,6 @@ struct StudentLocation: Codable {
         self.mapString = address
         self.mediaURL = url
         self.uniqueKey = userId
-        self.objectId = ""
     }
 }
 
