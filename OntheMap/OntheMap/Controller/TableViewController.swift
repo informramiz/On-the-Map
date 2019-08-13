@@ -23,7 +23,9 @@ class TableViewController: UIViewController {
     }
     
     @IBAction func onRefresh(_ sender: Any) {
+        onDataRefresh(inProgress: true)
         OnTheMapClient.getStudentLocations { (success, error) in
+            self.onDataRefresh(inProgress: false)
             if success {
                 self.tableView.reloadData()
             } else {
@@ -31,16 +33,16 @@ class TableViewController: UIViewController {
             }
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func onDataRefresh(inProgress: Bool) {
+        refreshNavBarItem.isEnabled = !inProgress
+        addNavBarItem.isEnabled = !inProgress
+        if inProgress {
+            activityIndicatorView.startAnimating()
+        } else {
+            activityIndicatorView.stopAnimating()
+        }
     }
-    */
-
 }
 
 extension TableViewController : UITableViewDataSource, UITableViewDelegate {
