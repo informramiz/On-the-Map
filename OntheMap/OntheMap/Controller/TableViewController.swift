@@ -22,6 +22,12 @@ class TableViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func logout(_ sender: Any) {
+        OnTheMapClient.logout { (success, error) in
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func onRefresh(_ sender: Any) {
         onDataRefresh(inProgress: true)
         OnTheMapClient.getStudentLocations { (success, error) in

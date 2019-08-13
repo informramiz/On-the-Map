@@ -180,6 +180,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="FXX-Ph-Agf"/>
                     <navigationItem key="navigationItem" title="On the Map" id="6cy-MT-DPQ">
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="vAB-a6-QtJ">
+                            <connections>
+                                <action selector="logout:" destination="pzj-ja-W9p" id="ypv-5X-VE8"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="SKs-os-wMX">
                                 <connections>
@@ -250,6 +255,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="Ebc-ac-YXX"/>
                     <navigationItem key="navigationItem" title="On the Map" id="vW5-R1-9bd">
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="780-40-Nnh">
+                            <connections>
+                                <action selector="logout:" destination="CYY-05-h8F" id="kAc-qH-wJ7"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="TSn-Eu-OXZ">
                                 <connections>

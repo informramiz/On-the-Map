@@ -182,6 +182,7 @@ class OnTheMapClient {
         }
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
+            clearUserData()
             guard let data = data else { // Handle error…
                 completionHandler?(false, error)
                 return
@@ -192,5 +193,12 @@ class OnTheMapClient {
             completionHandler?(true, nil)
         }
         task.resume()
+    }
+    
+    private class func clearUserData() {
+        Auth.sessionId = ""
+        Auth.userId = ""
+        AppData.studentLocations.removeAll()
+        AppData.userId = ""
     }
 }
