@@ -22,6 +22,13 @@ class TableViewController: UIViewController {
     }
     
     @IBAction func onRefresh(_ sender: Any) {
+        OnTheMapClient.getStudentLocations { (success, error) in
+            if success {
+                self.tableView.reloadData()
+            } else {
+                self.showErrorAlert(message: error?.localizedDescription ?? "Unable to refresh")
+            }
+        }
     }
     /*
     // MARK: - Navigation
