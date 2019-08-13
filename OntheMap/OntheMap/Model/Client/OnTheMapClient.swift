@@ -22,6 +22,7 @@ class OnTheMapClient {
         case signUp
         case getUserData
         case getStudentLocations
+        case postStudentLocation
         
         var stringValue: String {
             switch self {
@@ -29,6 +30,7 @@ class OnTheMapClient {
             case .signUp: return "https://www.google.com/url?q=https://www.udacity.com/account/auth%23!/signup&sa=D&ust=1563790146333000"
             case .getUserData: return Endpoints.baseUrl + "users/" + Auth.userId
             case .getStudentLocations: return Endpoints.baseUrl + "StudentLocation?limit=100&=-updatedAt"
+            case .postStudentLocation: return Endpoints.baseUrl + "StudentLocation"
             }
         }
         
@@ -63,6 +65,18 @@ class OnTheMapClient {
             }
             
             AppData.studentLocations = data.results
+            completionHandler(true, nil)
+        }
+    }
+    
+    class func postStudentLocation(studentLocation: StudentLocation, completionHandler: @escaping (Bool, Error?) -> Void) {
+        taskForPostRequest(url: Endpoints.postStudentLocation.url, request: studentLocation, responseType: PostStudentLocationResponse.self, skipFirstFiveCharacters: false) { (data, error) in
+            guard let data = data else {
+                completionHandler(false, error)
+                return
+            }
+            
+            print("Location saved successfully with object id: \(data.objectId)")
             completionHandler(true, nil)
         }
     }
