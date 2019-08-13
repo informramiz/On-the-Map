@@ -54,6 +54,7 @@ extension ShowLocationOnMapViewController: MKMapViewDelegate {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
             pinView!.canShowCallout = true
             pinView!.tintColor = .red
+            pinView!.isDraggable = true
             pinView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         } else {
             pinView?.annotation = annotation
@@ -66,5 +67,9 @@ extension ShowLocationOnMapViewController: MKMapViewDelegate {
         if let url = URL(string: view.annotation!.subtitle!!) {
             openUrl(url: url)
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationView.DragState, fromOldState oldState: MKAnnotationView.DragState) {
+        self.studentLocation = self.studentLocation.copy(location: view.annotation!.coordinate)
     }
 }

@@ -30,6 +30,10 @@ struct StudentLocation: Codable {
         self.mediaURL = url
         self.uniqueKey = userId
     }
+    
+    func copy(location: CLLocationCoordinate2D) -> StudentLocation {
+        return StudentLocation(address: self.mapString, url: mediaURL, userId: self.uniqueKey, location: location)
+    }
 }
 
 extension StudentLocation {
