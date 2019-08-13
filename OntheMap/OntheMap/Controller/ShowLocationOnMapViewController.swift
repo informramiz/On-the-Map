@@ -24,7 +24,13 @@ class ShowLocationOnMapViewController: UIViewController {
     }
     
     @IBAction func finish(_ sender: Any) {
-        
+        OnTheMapClient.postStudentLocation(studentLocation: studentLocation) { (success, error) in
+            if success {
+                self.navigationController?.dismiss(animated: true, completion: nil)
+            } else {
+                self.showErrorAlert(message: error?.localizedDescription ?? "Unable to save location")
+            }
+        }
     }
 }
 
