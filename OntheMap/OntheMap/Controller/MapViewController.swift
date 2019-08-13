@@ -14,6 +14,7 @@ class MapViewController: UIViewController {
     private var mapAnnotations = [MKPointAnnotation]()
     @IBOutlet weak var addNavBarItem: UIBarButtonItem!
     @IBOutlet weak var refreshNavBarItem: UIBarButtonItem!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,9 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func onRefresh(_ sender: Any) {
+        onDataRefresh(inProgress: true)
         OnTheMapClient.getStudentLocations { (success, error) in
+            self.onDataRefresh(inProgress: false)
             if success {
                 self.clearAllAnnotations()
                 self.setupAnnotations()
@@ -47,6 +50,16 @@ class MapViewController: UIViewController {
     
     private func clearAllAnnotations() {
         mapView.removeAnnotations(mapView.annotations)
+    }
+    
+    private func onDataRefresh(inProgress: Bool) {
+        refreshNavBarItem.isEnabled = !inProgress
+        addNavBarItem.isEnabled = !inProgress
+        if inProgress {
+            activityIndicatorView.startAnimating()
+        } else {
+            activityIndicatorView.stopAnimating()
+        }
     }
 }
 

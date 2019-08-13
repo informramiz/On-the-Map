@@ -12,6 +12,7 @@ class TableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addNavBarItem: UIBarButtonItem!
     @IBOutlet weak var refreshNavBarItem: UIBarButtonItem!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
