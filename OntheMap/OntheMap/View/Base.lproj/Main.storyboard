@@ -352,13 +352,19 @@
                                     <action selector="finish:" destination="Chh-ZG-ASz" eventType="touchUpInside" id="xgq-th-Fjg"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="e0M-11-ZW4">
+                                <rect key="frame" x="188.5" y="745" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1Mj-IL-Vqf" firstAttribute="top" secondItem="e0M-11-ZW4" secondAttribute="bottom" constant="20" id="JtE-f5-sl5"/>
                             <constraint firstItem="ajx-al-XxL" firstAttribute="trailing" secondItem="1Mj-IL-Vqf" secondAttribute="trailing" constant="20" id="Kdl-pN-4xw"/>
                             <constraint firstItem="ajx-al-XxL" firstAttribute="trailing" secondItem="Now-BS-lRk" secondAttribute="trailing" id="Z9j-fC-bkd"/>
                             <constraint firstItem="1Mj-IL-Vqf" firstAttribute="leading" secondItem="ajx-al-XxL" secondAttribute="leading" constant="20" id="bew-vd-2eL"/>
                             <constraint firstItem="Now-BS-lRk" firstAttribute="top" secondItem="ajx-al-XxL" secondAttribute="top" id="eyn-pK-UAX"/>
+                            <constraint firstItem="e0M-11-ZW4" firstAttribute="centerX" secondItem="DLi-Xv-ebA" secondAttribute="centerX" id="fFh-xc-CD1"/>
                             <constraint firstItem="ajx-al-XxL" firstAttribute="bottom" secondItem="Now-BS-lRk" secondAttribute="bottom" id="kS7-Wn-1jx"/>
                             <constraint firstItem="ajx-al-XxL" firstAttribute="bottom" secondItem="1Mj-IL-Vqf" secondAttribute="bottom" constant="20" id="kv2-l8-d6F"/>
                             <constraint firstItem="Now-BS-lRk" firstAttribute="leading" secondItem="ajx-al-XxL" secondAttribute="leading" id="wDF-gI-fYw"/>
@@ -366,6 +372,7 @@
                         <viewLayoutGuide key="safeArea" id="ajx-al-XxL"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="e0M-11-ZW4" id="R3g-Vu-ETq"/>
                         <outlet property="finishButton" destination="1Mj-IL-Vqf" id="n2d-FT-UhJ"/>
                         <outlet property="mapView" destination="Now-BS-lRk" id="fQg-FQ-wJj"/>
                     </connections>

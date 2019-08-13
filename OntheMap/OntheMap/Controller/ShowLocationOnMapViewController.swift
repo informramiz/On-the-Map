@@ -12,6 +12,7 @@ import MapKit
 class ShowLocationOnMapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var finishButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     //member field to be passed from previous controller
     var studentLocation: StudentLocation!
     
@@ -24,12 +25,23 @@ class ShowLocationOnMapViewController: UIViewController {
     }
     
     @IBAction func finish(_ sender: Any) {
+        isLocationSaving(inProgress: true)
         OnTheMapClient.postStudentLocation(studentLocation: studentLocation) { (success, error) in
+            self.isLocationSaving(inProgress: false)
             if success {
                 self.navigationController?.dismiss(animated: true, completion: nil)
             } else {
                 self.showErrorAlert(message: error?.localizedDescription ?? "Unable to save location")
             }
+        }
+    }
+    
+    func isLocationSaving(inProgress: Bool) {
+        finishButton.isEnabled = !inProgress
+        if inProgress {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
         }
     }
 }
@@ -49,6 +61,7 @@ extension ShowLocationOnMapViewController: MKMapViewDelegate {
         
         return pinView
     }
+    
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let url = URL(string: view.annotation!.subtitle!!) {
             openUrl(url: url)
