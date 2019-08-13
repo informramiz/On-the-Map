@@ -180,17 +180,22 @@ class OnTheMapClient {
         if let xsrfCookie = xsrfCookie {
             request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
         }
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) { data, response, error in
+    
+        let callCompletionHandler = { (success: Bool, error: Error?) in
+            DispatchQueue.main.async {
+                completionHandler?(success, error)
+            }
+        }
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
             clearUserData()
             guard let data = data else { // Handle error…
-                completionHandler?(false, error)
+                callCompletionHandler(false, error)
                 return
             }
             
             let newData = data.subdata(in: 5..<data.count) /* subset response data! */
             print("Logout response: " + String(data: newData, encoding: .utf8)!)
-            completionHandler?(true, nil)
+            callCompletionHandler(true, nil)
         }
         task.resume()
     }
