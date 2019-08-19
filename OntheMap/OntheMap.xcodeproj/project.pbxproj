@@ -19,6 +19,7 @@
 		18D8768C22E5CF5D00028D7A /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8768B22E5CF5D00028D7A /* LoginRequest.swift */; };
 		18D8768E22E5D13B00028D7A /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8768D22E5D13B00028D7A /* LoginResponse.swift */; };
 		B44E933922FB6BB2001E7B42 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E933822FB6BB2001E7B42 /* AddLocationViewController.swift */; };
+		B4510522230AFCC800683775 /* HideKeyboardOnEnterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4510521230AFCC800683775 /* HideKeyboardOnEnterDelegate.swift */; };
 		B45175AE23029E05005D3D9B /* PostStudentLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45175AD23029E05005D3D9B /* PostStudentLocationResponse.swift */; };
 		B45508702301882B00EE277D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455086F2301882B00EE277D /* String+Extension.swift */; };
 		B45508742301A4B400EE277D /* ShowLocationOnMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45508732301A4B400EE277D /* ShowLocationOnMapViewController.swift */; };
@@ -45,6 +46,7 @@
 		18D8768B22E5CF5D00028D7A /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		18D8768D22E5D13B00028D7A /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		B44E933822FB6BB2001E7B42 /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
+		B4510521230AFCC800683775 /* HideKeyboardOnEnterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardOnEnterDelegate.swift; sourceTree = "<group>"; };
 		B45175AD23029E05005D3D9B /* PostStudentLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStudentLocationResponse.swift; sourceTree = "<group>"; };
 		B455086F2301882B00EE277D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		B45508732301A4B400EE277D /* ShowLocationOnMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowLocationOnMapViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		B4510520230AFB8B00683775 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B4510521230AFCC800683775 /* HideKeyboardOnEnterDelegate.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				18D8768A22E5CF3000028D7A /* UdacityCredentials.swift in Sources */,
 				B4B20F4922F418F4008E94BF /* MapViewController.swift in Sources */,
 				18D8768C22E5CF5D00028D7A /* LoginRequest.swift in Sources */,
+				B4510522230AFCC800683775 /* HideKeyboardOnEnterDelegate.swift in Sources */,
 				18D8768E22E5D13B00028D7A /* LoginResponse.swift in Sources */,
 				B45175AE23029E05005D3D9B /* PostStudentLocationResponse.swift in Sources */,
 				B45508742301A4B400EE277D /* ShowLocationOnMapViewController.swift in Sources */,
