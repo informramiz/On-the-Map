@@ -14,10 +14,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginActivityIndicator: UIActivityIndicatorView!
+    private let autoHideKeyboardDelegate = HideKeyboardOnEnterDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        emailTextField.delegate = autoHideKeyboardDelegate
+        passwordTextField.delegate = autoHideKeyboardDelegate
     }
 
     @IBAction func loginButtonTapped(_ sender: Any) {
