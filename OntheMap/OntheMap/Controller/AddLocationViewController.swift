@@ -14,11 +14,22 @@ class AddLocationViewController: UIViewController {
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var findLocationButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    private let hideKeyboardDelegate = HideKeyboardOnEnterDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        addressTextField.delegate = hideKeyboardDelegate
+        urlTextField.delegate = hideKeyboardDelegate
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     @IBAction func onCancel(_ sender: Any) {
