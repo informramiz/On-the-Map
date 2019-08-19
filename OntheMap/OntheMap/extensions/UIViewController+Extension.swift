@@ -33,14 +33,18 @@ extension UIViewController {
         return UIApplication.shared.canOpenURL(url)
     }
     
-    func subscribeToKeyboardNotifications(keyboardWillShow: Selector, keyboardWillHide: Selector) {
+    func subscribeToKeyboardNotifications(keyboardWillShow: Selector, keyboardWillHide: Selector? = nil) {
         NotificationCenter.default.addObserver(self, selector: keyboardWillShow, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: keyboardWillHide, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: keyboardWillHide ?? #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func unsubscribeToKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        resetMainViewHeightToNormal()
     }
     
     func getKeyboardHeight(_ notification: Notification) -> CGFloat {

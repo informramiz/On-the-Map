@@ -27,7 +27,8 @@ class AddLocationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        subscribeToKeyboardNotifications(keyboardWillShow: #selector(keyboardWillShow(_:)), keyboardWillHide: #selector(keyboardWillHide(_:)))
+        subscribeToKeyboardNotifications(keyboardWillShow: #selector(keyboardWillShow(_:)),
+                                         keyboardWillHide: #selector(keyboardWillHide(_:)))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -36,24 +37,12 @@ class AddLocationViewController: UIViewController {
     }
     
     @objc private func keyboardWillShow(_ notification: Notification) {
-        guard let activeTextField = hideKeyboardDelegate.activeTextField else {
-            return
-        }
         let keyboardHeight = getKeyboardHeight(notification)
-        //add extra 5 just to have some space between keyboard and text field
-        let keyboardY = view.frame.height - keyboardHeight - 5
-        let textFieldY = view.frame.origin.y + stackView.frame.origin.y + activeTextField.frame.origin.y
-        let textFieldEndY = textFieldY + activeTextField.frame.height
-        
-        if (textFieldEndY > keyboardY) {
-            //text view is being obscured by keyboard, move the view up
-            let diff = textFieldEndY - keyboardY
-            moveMainViewUpBy(height: diff)
-        }
+        hideKeyboardDelegate.activeTextField?.keyboardWillShow(keyboardHeight: keyboardHeight)
     }
     
     @objc private func keyboardWillHide(_ notification: Notification) {
-        resetMainViewHeightToNormal()
+        hideKeyboardDelegate.activeTextField?.keyboardWillHide()
     }
     
     @IBAction func onCancel(_ sender: Any) {

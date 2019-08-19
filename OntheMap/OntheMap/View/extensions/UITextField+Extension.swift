@@ -60,7 +60,7 @@ extension UITextField {
         }
     }
     
-    fileprivate func resetMainViewToNormalHeight() {
+    private func resetMainViewToNormalHeight() {
         rootView.frame.origin.y = 0
     }
     
