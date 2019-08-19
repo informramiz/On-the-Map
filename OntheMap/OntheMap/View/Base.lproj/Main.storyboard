@@ -344,6 +344,7 @@
                         <outlet property="activityIndicator" destination="lib-kW-Tt6" id="CRD-p3-AwA"/>
                         <outlet property="addressTextField" destination="j2E-6y-ip5" id="tPn-Vn-Q9Z"/>
                         <outlet property="findLocationButton" destination="tBI-7h-fVe" id="8YO-7y-Smf"/>
+                        <outlet property="stackView" destination="OQD-1S-hy8" id="rs7-TR-ZHJ"/>
                         <outlet property="urlTextField" destination="Soo-oV-DUo" id="yIk-Bx-leo"/>
                         <segue destination="Chh-ZG-ASz" kind="show" identifier="ShowLocationOnMap" id="mdV-lG-yPZ"/>
                     </connections>
