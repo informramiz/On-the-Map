@@ -99,6 +99,7 @@
 		18D8767C22E5CA4B00028D7A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4510520230AFB8B00683775 /* Common */,
 				18D8766E22E5AA3100028D7A /* Main.storyboard */,
 				18D8767122E5AA3500028D7A /* Assets.xcassets */,
 				18D8767322E5AA3500028D7A /* LaunchScreen.storyboard */,
@@ -165,6 +166,13 @@
 				B4B20F4C22F41AEC008E94BF /* AppData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		B4510520230AFB8B00683775 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		B455086E2301876B00EE277D /* extensions */ = {
