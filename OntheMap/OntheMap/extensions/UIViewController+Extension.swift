@@ -48,4 +48,12 @@ extension UIViewController {
         let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.cgRectValue.height
     }
+    
+    func moveMainViewUpBy(height: CGFloat) {
+        view.frame.origin.y -= height
+    }
+    
+    func resetMainViewHeightToNormal() {
+        view.frame.origin.y = 0
+    }
 }
