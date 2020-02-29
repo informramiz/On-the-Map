@@ -29,7 +29,7 @@ class OnTheMapClient {
             case .login: return Endpoints.baseUrl + "session"
             case .signUp: return "https://www.google.com/url?q=https://www.udacity.com/account/auth%23!/signup&sa=D&ust=1563790146333000"
             case .getUserData: return Endpoints.baseUrl + "users/" + Auth.userId
-            case .getStudentLocations: return Endpoints.baseUrl + "StudentLocation?limit=100&=-updatedAt"
+            case .getStudentLocations: return Endpoints.baseUrl + "StudentLocation?limit=100&order=-updatedAt"
             case .postStudentLocation: return Endpoints.baseUrl + "StudentLocation"
             }
         }
